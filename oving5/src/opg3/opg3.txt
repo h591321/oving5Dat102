@@ -1,0 +1,41 @@
+OPG3B
+
+binaerseok(tab,0,15,8)
+
+velger 0 og 15 som min/maks siden det er rekkevidden i tabellen som indexer.
+velger 8 som verdien vi søker etter
+
+regner midtpunkt for (0+15)/2=15/2=7.5=7 pga int typen
+
+så sammenligner vi 8.compareTo(tab[7])=8.compareTo(15) som returnerer -1
+
+da går vi inn i if(resultat<0) som er true (-1<0)
+da går vi rekursivt inn i binaersoek igjen (tab,0,7-1,8)
+midtpunkt=3
+8.compareTo(tab[3])=8.compareTo(7) som returnerer 1
+da går vi inn i else og binaerSoek(tab,3+1,6,8)
+midtpunkt=5
+8.compareTo(tab[5])=8.compareTo(10) returnerer -1
+da går vi inn i if(resultat<0) og binaersoek(tab,4,4,8)
+midtpunkt=4
+8.compareTo(tab[4])=8.compareTo(8) som returnerer 0
+da går vi inn resultat==0 som returnerer true for at 8 fins i tabllen
+
+OPG3C
+
+binaerSoek(tab,0,15,16)
+midtpunkt=7
+16.compareTo(tab[7])=16.compareTo(15) som returnerer 1
+går inn i else og binaerSoek(tab,7+1,15,16)
+midtpunkt=11.5=11
+16.compareTo(tab[11])=16.compareTo(27) som gir -1
+går inn i resultat<0 og binaersoek(tab,8,10,16)
+midtpunkt=9
+16.compareTo(tab[9])=16.compareTo(21) som gir -1
+går inn i resultat<0 og binaersoek(tab,8,8,16)
+midtpunkt=8
+16.compareTo(tab[8])=16.compareTo(18) som gir -1
+går inn i resultat<0 og binaersoek(tab,8,7,16)
+siden min>maks så returnerer metoden false
+
+OPG3D
